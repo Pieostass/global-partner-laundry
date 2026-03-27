@@ -32,6 +32,10 @@
         }
     },
     "scripts": {
+        "pre-install-cmd": [
+            "mkdir -p bootstrap/cache storage/framework/cache storage/framework/sessions storage/framework/views",
+            "chmod -R 775 bootstrap/cache storage/framework"
+        ],
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
